@@ -1,1 +1,73 @@
 /* Place custom css here */
+/* Card styles */
+.card {
+    background: var(--card-bg, #ffffff);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px var(--card-shadow, rgba(0,0,0,0.1));
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    /* color: var(--card-text, #333); */
+} */
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--card-shadow-hover, rgba(0,0,0,0.15));
+}
+
+.card blockquote {
+    margin: 0;
+    padding-left: 1em;
+    border-left: 4px solid var(--card-border, #e0e0e0);
+}
+
+/* Additional utility classes */
+.quote {
+    font-style: italic;
+    color: var(--card-text-secondary, #555);
+    padding-left: 1em;
+    border-left: 3px solid var(--card-border, #ddd);
+}
+
+.author {
+    text-align: right;
+    font-size: 0.9em;
+    color: var(--card-text-secondary, #666);
+    margin-top: 0.5em;
+}
+
+.line-title > a {
+    text-decoration: none;
+}
+
+.line-title > a:hover {
+    text-decoration: underline;
+}
+
+
+/* Theme Variables */
+:root {
+    --bg-secondary: #f0f0f0;
+    --bg-hover: #e0e0e0;
+    --bg-active: #d0d0d0;
+    --text-primary: #333;
+    --card-bg: #000000;
+    --card-shadow: rgba(0,0,0,0.1);
+    --card-shadow-hover: rgba(0,0,0,0.15);
+    --card-border: #e0e0e0;
+    --card-text: #333;
+    --card-text-secondary: #555;
+}
+
+[data-theme="dark"] {
+    --bg-secondary: #2a2a2a;
+    --bg-hover: #3a3a3a;
+    --bg-active: #4a4a4a;
+    --text-primary: #fff;
+    --card-bg: #1a1a1a;
+    --card-shadow: rgba(0,0,0,0.4);
+    --card-shadow-hover: rgba(0,0,0,0.6);
+    --card-border: #333;
+    --card-text: #e0e0e0;
+    --card-text-secondary: #aaa;
+} 
