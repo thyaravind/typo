@@ -1,18 +1,28 @@
-/* Place custom css here */
-/* Card styles */
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url('/fonts/Hanken_Grotesk/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
 .card {
-    background: var(--card-bg, #ffffff);
+    background: var(--card-bg, #898989);
     border-radius: 8px;
+    border: 1px solid var(--card-border, #e0e0e0);
     padding: 20px;
     margin: 20px 0;
-    box-shadow: 0 2px 4px var(--card-shadow, rgba(0,0,0,0.1));
+    /* box-shadow: 0 2px 4px var(--card-shadow, rgba(0,0,0,0.1)); */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    /* color: var(--card-text, #333); */
-} */
+}
 
 .card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--card-shadow-hover, rgba(0,0,0,0.15));
+    /* box-shadow: 0 4px 8px var(--card-shadow-hover, rgba(0,0,0,0.15)); */
 }
 
 .card blockquote {
@@ -36,38 +46,111 @@
     margin-top: 0.5em;
 }
 
-.line-title > a {
+.line-title > a,
+.single-pagination-text > a {
     text-decoration: none;
 }
 
-.line-title > a:hover {
+.single-tags > span > a, .tag-title > a {
+    text-decoration: none;
+    font-size: 0.8em;
+    border: 1px solid var(--card-border);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.single-tags > span > a:hover, .tag-title > a:hover {
+    background-color: var(--active);
+    border-color: var(--active);
+    color: #ffffff;
+}
+
+.line-title > a:hover,
+.single-pagination-text > a:hover {
     text-decoration: underline;
+    color: var(--active);
+}
+
+.single-pagination-container-next {
+    float: right;
+    text-align: right;
+    font-size: medium;
+}
+
+.single-pagination-container-prev {
+    float: left;
+    text-align: left;
+    font-size: medium;
 }
 
 
-/* Theme Variables */
+/* body {
+    font-family: var(--font-body);
+} */
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --active: #0e765f;
+        --bg-secondary: #2a2a2a;
+        --bg-hover: #3a3a3a;
+        --bg-active: #4a4a4a;
+        --text-primary: #fff;
+        --card-bg: #1a1a1a;
+        --card-shadow: rgba(0,0,0,0.4);
+        --card-shadow-hover: rgba(0,0,0,0.6);
+        --card-border: #333;
+        --card-text: #e0e0e0;
+        --card-text-secondary: #aaa;
+    } 
+  }
+
+@media (prefers-color-scheme: light) {
 :root {
+    --active: #0e765f;
     --bg-secondary: #f0f0f0;
     --bg-hover: #e0e0e0;
     --bg-active: #d0d0d0;
     --text-primary: #333;
-    --card-bg: #000000;
+    --card-bg: #ffffff;
     --card-shadow: rgba(0,0,0,0.1);
     --card-shadow-hover: rgba(0,0,0,0.15);
-    --card-border: #e0e0e0;
+    --card-border: #e9e9e9;
     --card-text: #333;
     --card-text-secondary: #555;
+    --font-body: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !important;
+}
 }
 
-[data-theme="dark"] {
-    --bg-secondary: #2a2a2a;
-    --bg-hover: #3a3a3a;
-    --bg-active: #4a4a4a;
-    --text-primary: #fff;
-    --card-bg: #1a1a1a;
-    --card-shadow: rgba(0,0,0,0.4);
-    --card-shadow-hover: rgba(0,0,0,0.6);
-    --card-border: #333;
-    --card-text: #e0e0e0;
-    --card-text-secondary: #aaa;
-} 
+@media screen and (max-width: 640px) {
+    .post-line {
+      flex-direction: column;
+      align-items: flex-start;
+      /* gap: 0.5rem; */
+      margin-bottom: 3rem;
+    }
+  
+    .line-date {
+      min-width: unset;
+      max-width: unset;
+      text-align: left;
+      padding-right: 0;
+    }
+  }
+  
+.small {
+    white-space: nowrap;
+}
+
+h1.header-title + * {
+    flex-wrap: wrap;
+}
+
+p.small {
+    margin-bottom: 0rem;
+}
+
+.bold {
+    font-weight: bold;
+    color: var(--active);
+}
