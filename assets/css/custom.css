@@ -1,13 +1,5 @@
-@font-face {
-    font-family: 'Hanken Grotesk';
-    src: url('/fonts/Hanken_Grotesk/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
 body {
-    font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-family:  "Didact Gothic","Red Hat Text-", "Nunito","Questrial", "Maven Pro", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 .card {
